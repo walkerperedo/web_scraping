@@ -2,6 +2,7 @@
   {
     "name": "YouTube",
     "scriptName": "youtube",
-    "url": "http://www.youtube.com"
+    "url": "http://www.youtube.com",
+    "selectors": {}
   }
 ]
