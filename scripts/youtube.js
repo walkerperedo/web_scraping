@@ -1,3 +1,6 @@
 module.exports = async (page, website) => {
-  await page.goto(website.url);
+  const { url, selectors } = website;
+  await page.goto(url);
+  await page.waitForSelector(selectors.trendsLink);
+  await page.click(selectors.trendsLink);
 };

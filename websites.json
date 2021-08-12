@@ -3,6 +3,8 @@
     "name": "YouTube",
     "scriptName": "youtube",
     "url": "http://www.youtube.com",
-    "selectors": {}
+    "selectors": {
+      "trendsLink": "#items > ytd-guide-entry-renderer:nth-child(2) > a"
+    }
   }
 ]
