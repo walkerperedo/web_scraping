@@ -11,6 +11,7 @@ const path = require("path");
 
   for (const website of websites) {
     const scriptPath = path.join(__dirname, "scripts", website.scriptName);
-    require(scriptPath)(page, website);
+    await require(scriptPath)(page, website);
+    console.log("Scraping done for ", website.name);
   }
 })();
