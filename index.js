@@ -5,7 +5,7 @@ const path = require("path");
 (async () => {
   const browser = await puppeteer.launch({
     headless: false,
-    executablePath: "/usr/bin/google-chrome",
+    // executablePath: "/usr/bin/google-chrome",
   });
   const page = await browser.newPage();
 
