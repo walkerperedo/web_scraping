@@ -34,6 +34,10 @@ module.exports = async (page, website) => {
     };
   });
 
+  await page.screenshot({
+    path: path.join(__dirname, `${website.scriptName}.png`),
+  });
+
   fs.writeFileSync(
     path.join(__dirname, `${website.scriptName}.json`),
     JSON.stringify(trendsFormatted),
