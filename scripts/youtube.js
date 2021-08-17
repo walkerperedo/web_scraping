@@ -21,8 +21,14 @@ module.exports = async (page, website) => {
   }, selectors.trendListTags);
 
   const regExp = new RegExp("[A-z]+");
-  for (const text of trendsText) {
+  const trendsFormatted = trendsText.map((text) => {
     const textSplitted = text.split("\n").filter((txt) => regExp.test(txt));
-    console.log(textSplitted);
-  }
+    return {
+      name: textSplitted[0],
+      channel: textSplitted[1],
+      views: textSplitted[2],
+      dtAdded: textSplitted[3],
+    };
+  });
+  console.log(trendsFormatted);
 };
