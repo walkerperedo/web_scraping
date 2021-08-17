@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 module.exports = async (page, website) => {
   const { url, selectors } = website;
   await page.goto(url);
@@ -30,5 +33,10 @@ module.exports = async (page, website) => {
       dtAdded: textSplitted[3],
     };
   });
-  console.log(trendsFormatted);
+
+  fs.writeFileSync(
+    path.join(__dirname, `${website.scriptName}.json`),
+    JSON.stringify(trendsFormatted),
+    "utf8"
+  );
 };
