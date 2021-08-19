@@ -11,6 +11,10 @@
   {
     "name": "Facebook",
     "scriptName": "facebook",
-    "url": "https://www.facebook.com"
+    "url": "https://www.facebook.com",
+    "selectors": {
+      "emailInput": "#email",
+      "passwordInput": "#pass"
+    }
   }
 ]

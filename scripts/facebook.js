@@ -1,1 +1,9 @@
-module.exports = (page, website) => {};
+module.exports = async (page, website) => {
+  const { selectors } = website;
+
+  await page.goto(website.url);
+  await page.waitForSelector(selectors.emailInput);
+  await page.waitForSelector(selectors.passwordInput);
+  await page.type(selectors.emailInput, process.env.FACEBOOK_USERNAME);
+  await page.type(selectors.passwordInput, process.env.FACEBOOK_PASSWORD);
+};
