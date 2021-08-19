@@ -11,5 +11,14 @@ module.exports = async (page, website) => {
   await page.waitFor(3000);
   await page.goto(`${website.url}/marketplace`);
   await page.waitForSelector(selectors.products);
-  await page.evaluate((productsTags) => {}, selectors.products);
+  await page.evaluate((productsTags) => {
+    const products = document.querySelectorAll(productsTags);
+    const regExp = new RegExp("[A-z]+");
+
+    for (const product of products) {
+      const productText = product ? product.innerText : "";
+      const cleanText = productText.split("\n").filter((el) => regExp.test(el));
+      console.log(cleanText);
+    }
+  }, selectors.products);
 };

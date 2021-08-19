@@ -1,5 +1,14 @@
 [
   {
+    "name": "YouTube",
+    "scriptName": "youtube",
+    "url": "https://www.youtube.com/",
+    "selectors": {
+      "trendsLink": "#items > ytd-guide-entry-renderer:nth-child(2) > a",
+      "trendListTags": "ytd-video-renderer #dismissible #meta"
+    }
+  },
+  {
     "name": "Facebook",
     "scriptName": "facebook",
     "url": "https://www.facebook.com",
