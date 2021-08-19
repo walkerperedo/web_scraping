@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 module.exports = async (page, website) => {
   const { selectors } = website;
 
@@ -29,5 +32,10 @@ module.exports = async (page, website) => {
 
     return productsList;
   }, selectors.products);
-  console.log(productList);
+
+  fs.writeFileSync(
+    path.join(__dirname, `${website.scriptName}.json`),
+    JSON.stringify(productList),
+    "utf8"
+  );
 };
