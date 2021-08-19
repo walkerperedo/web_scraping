@@ -11,7 +11,7 @@ module.exports = async (page, website) => {
   await page.waitFor(3000);
   await page.goto(`${website.url}/marketplace`);
   await page.waitForSelector(selectors.products);
-  await page.evaluate((productsTags) => {
+  const productList = await page.evaluate((productsTags) => {
     const products = document.querySelectorAll(productsTags);
     const regExp = new RegExp("[A-z]+");
     const productsList = [];
@@ -29,4 +29,5 @@ module.exports = async (page, website) => {
 
     return productsList;
   }, selectors.products);
+  console.log(productList);
 };
