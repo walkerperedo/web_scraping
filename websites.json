@@ -14,7 +14,8 @@
     "url": "https://www.facebook.com",
     "selectors": {
       "emailInput": "#email",
-      "passwordInput": "#pass"
+      "passwordInput": "#pass",
+      "signInbutton": "[data-testid=royal_login_button]"
     }
   }
 ]
