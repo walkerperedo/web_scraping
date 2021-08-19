@@ -10,4 +10,6 @@ module.exports = async (page, website) => {
   await page.click(selectors.signInbutton);
   await page.waitFor(3000);
   await page.goto(`${website.url}/marketplace`);
+  await page.waitForSelector(selectors.products);
+  await page.evaluate((productsTags) => {}, selectors.products);
 };
