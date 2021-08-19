@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const puppeteer = require("puppeteer");
 const websites = require("./websites.json");
 const path = require("path");
