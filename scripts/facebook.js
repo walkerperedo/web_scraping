@@ -14,11 +14,19 @@ module.exports = async (page, website) => {
   await page.evaluate((productsTags) => {
     const products = document.querySelectorAll(productsTags);
     const regExp = new RegExp("[A-z]+");
+    const productsList = [];
 
     for (const product of products) {
       const productText = product ? product.innerText : "";
       const cleanText = productText.split("\n").filter((el) => regExp.test(el));
-      console.log(cleanText);
+      if (!cleanText.length) break;
+      let newProduct = {};
+      newProduct.price = cleanText.length > 2 ? cleanText[0] : undefined;
+      newProduct.name = cleanText.length > 2 ? cleanText[1] : cleanText[0];
+      newProduct.location = cleanText.length > 2 ? cleanText[2] : cleanText[1];
+      productsList.push(newProduct);
     }
+
+    return productsList;
   }, selectors.products);
 };
