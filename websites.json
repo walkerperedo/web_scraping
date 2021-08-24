@@ -18,5 +18,11 @@
       "signInbutton": "[data-testid=royal_login_button]",
       "products": ".b3onmgus.ph5uu5jm.g5gj957u.buofh1pr.cbu4d94t.rj1gh0hx.j83agx80.rq0escxv.fnqts5cd.fo9g3nie.n1dktuyu.e5nlhep0.ecm0bbzt"
     }
+  },
+  {
+    "name": "Ebay",
+    "scriptName": "ebay",
+    "url": "https://www.ebay.com/",
+    "selectors": {}
   }
 ]

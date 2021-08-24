@@ -16,4 +16,6 @@ const path = require("path");
     await require(scriptPath)(page, website);
     console.log("Scraping done for ", website.name);
   }
+
+  await page.close();
 })();
