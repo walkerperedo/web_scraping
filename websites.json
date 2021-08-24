@@ -23,6 +23,8 @@
     "name": "Ebay",
     "scriptName": "ebay",
     "url": "https://www.ebay.com/",
-    "selectors": {}
+    "selectors": {
+      "searchBar": "#gh-ac"
+    }
   }
 ]
