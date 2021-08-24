@@ -24,7 +24,9 @@
     "scriptName": "ebay",
     "url": "https://www.ebay.com/",
     "selectors": {
-      "searchBar": "#gh-ac"
+      "searchBar": "#gh-ac",
+      "searchButton": "#gh-btn",
+      "itemTitle": "h3.s-item__title"
     }
   }
 ]
